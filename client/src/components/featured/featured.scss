@@ -1,8 +1,12 @@
-@import "../../app.scss";
+@import '../../app.scss';
 
 .featured {
-  height: 76vh;
+  height: 100vh;
   position: relative;
+
+  .title {
+    font-size: 80px;
+  }
 
   .category {
     position: absolute;
@@ -24,7 +28,7 @@
     }
   }
 
-  #genre{
+  #genre {
     z-index: 2;
   }
 

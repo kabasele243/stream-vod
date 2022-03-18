@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -7,7 +8,10 @@ const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
 
+
 dotenv.config();
+
+app.use(cors())
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -28,5 +32,5 @@ app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
 app.listen(8801, () => {
-  console.log("Backend server is running!");
+  console.log("Backend server is running at port 8801!");
 });

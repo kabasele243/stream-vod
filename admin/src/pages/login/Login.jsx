@@ -8,13 +8,14 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const { isFetching, dispatch } = useContext(AuthContext);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    login({ email, password }, dispatch);
+    await login({ email, password }, dispatch);
   };
 
   return (
     <div className="login">
+      <h1>Matokolo</h1>
       <form className="loginForm">
         <input
           type="text"

@@ -14,13 +14,13 @@ import { AuthContext } from "./authContext/AuthContext";
 
 const App = () => {
   const { user } = useContext(AuthContext);
-  console.log({user})
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
 
-          {user ? <Home /> : <Redirect to="/register" />}
+          {user ? <Home user={user}/> : <Redirect to="/register" />}
           {/* <Home/> */}
         </Route>
         <Route path="/register">
